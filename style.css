@@ -1,5 +1,24 @@
+/* Regular Weight */
+@font-face {
+    font-family: Roboto;
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+
+/* Bold Weight */
+@font-face {
+    font-family: Roboto;
+    src: url("./fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+:root{
+    --sidebar-space: 1em;
+    --primary-color: rgb(25 146 212);
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', Times, serif;
 }
 
 body {
@@ -9,23 +28,86 @@ body {
 .container {
     display: grid;
     grid-template-areas: 
-        "sidebar header header header"
-        "sidebar main-content main-content main-content"
-        "sidebar main-content main-content main-content"
-        "sidebar main-content main-content main-content";
+        "sidebar header header header header"
+        "sidebar main-content main-content main-content main-content"
+        "sidebar main-content main-content main-content main-content"
+        "sidebar main-content main-content main-content main-content";
 }
 
-.sidebar{
-    border: 1px black solid;
+.sidebar {
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px red solid;
     grid-area: sidebar;
+    padding: var(--sidebar-space);
+    font-weight: bold;
 }
 
-.header{
-    border: 1px black solid;
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--sidebar-space);
+    margin-bottom: calc(var(--sidebar-space) * 3);
+}
+
+.sidebar .logo .icon {
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "a d"
+    "c d";
+    background-color: var(--primary-color);
+    gap: 3px;
+    height: 30px;
+    width: 30px;
+}
+
+.sidebar .logo .icon .item-a,
+.sidebar .logo .icon .item-b,
+.sidebar .logo .icon .item-c,
+.sidebar .logo .icon .item-d{
+    background-color: white;
+}
+
+.sidebar .logo .icon .item-a{
+    grid-area: a;
+}
+
+.sidebar .logo .icon .item-b{
+    grid-area: b;
+}
+
+.sidebar .logo .icon .item-c{
+    grid-area: c;
+}
+
+.sidebar .logo .icon .item-d{
+    grid-area: d;
+}
+
+.sidebar .options {
+    display:flex;
+    flex-direction: column;
+    gap: var(--sidebar-space);
+    margin-bottom: calc(var(--sidebar-space) * 3)
+}
+
+.sidebar .options .option {
+    display:flex;
+    align-items: center;
+    gap: var(--sidebar-space);
+}
+
+.sidebar .options .option img {
+    height: calc(var(--sidebar-space) * 1.5)
+}
+
+.header {
+    border: 1px red solid;
     grid-area: header;
 }
 
-.main-content{
-    border: 1px black solid;
+.main-content {
+    border: 1px red solid;
     grid-area: main-content
 }
