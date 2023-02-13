@@ -1,386 +1,388 @@
 /* Regular Weight */
 @font-face {
-    font-family: Roboto;
-    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+  font-family: Roboto;
+  src: url("./fonts/Roboto/Roboto-Regular.ttf");
 }
 
 /* Bold Weight */
 @font-face {
-    font-family: Roboto;
-    src: url("./fonts/Roboto/Roboto-Bold.ttf");
-    font-weight: bold;
+  font-family: Roboto;
+  src: url("./fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
 }
 
-:root{
-    --sidebar-space: 1em;
-    --primary-color: rgb(25 146 212);
-    --bg-color: rgb(226 232 240);
+:root {
+  --sidebar-space: 1em;
+  --primary-color: rgb(25 146 212);
+  --bg-color: rgb(226 232 240);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto', Times, serif;
+  box-sizing: border-box;
+  font-family: "Roboto", Times, serif;
 }
 
 body {
-    margin: 0px;
-    background-color: var(--bg-color);
+  margin: 0px;
+  background-color: var(--bg-color);
 }
 
 .container {
-    display: grid;
-    grid-template-areas: 
-        "sidebar header header header header"
-        "sidebar main-content main-content main-content main-content"
-        "sidebar main-content main-content main-content main-content"
-        "sidebar main-content main-content main-content main-content";
+  display: grid;
+  grid-template-areas:
+    "sidebar header header header header"
+    "sidebar main-content main-content main-content main-content"
+    "sidebar main-content main-content main-content main-content"
+    "sidebar main-content main-content main-content main-content";
 }
 
 .sidebar {
-    background-color: var(--primary-color);
-    color: white;
-    grid-area: sidebar;
-    padding: var(--sidebar-space);
-    font-weight: bold;
+  background-color: var(--primary-color);
+  color: white;
+  grid-area: sidebar;
+  padding: var(--sidebar-space);
+  font-weight: bold;
 }
 
 .sidebar .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--sidebar-space);
-    margin-bottom: calc(var(--sidebar-space) * 3);
+  display: flex;
+  align-items: center;
+  gap: var(--sidebar-space);
+  margin-bottom: calc(var(--sidebar-space) * 3);
 }
 
 .sidebar .logo .icon {
-    display: grid;
-    grid-template-areas: 
+  display: grid;
+  grid-template-areas:
     "a b"
     "a d"
     "c d";
-    background-color: var(--primary-color);
-    gap: 3px;
-    height: 30px;
-    width: 30px;
+  background-color: var(--primary-color);
+  gap: 3px;
+  height: 30px;
+  width: 30px;
 }
 
 .sidebar .logo .icon .item-a,
 .sidebar .logo .icon .item-b,
 .sidebar .logo .icon .item-c,
-.sidebar .logo .icon .item-d{
-    background-color: white;
+.sidebar .logo .icon .item-d {
+  background-color: white;
 }
 
-.sidebar .logo .icon .item-a{
-    grid-area: a;
+.sidebar .logo .icon .item-a {
+  grid-area: a;
 }
 
-.sidebar .logo .icon .item-b{
-    grid-area: b;
+.sidebar .logo .icon .item-b {
+  grid-area: b;
 }
 
-.sidebar .logo .icon .item-c{
-    grid-area: c;
+.sidebar .logo .icon .item-c {
+  grid-area: c;
 }
 
-.sidebar .logo .icon .item-d{
-    grid-area: d;
+.sidebar .logo .icon .item-d {
+  grid-area: d;
 }
 
 .sidebar .options {
-    display:flex;
-    flex-direction: column;
-    gap: var(--sidebar-space);
-    margin-bottom: calc(var(--sidebar-space) * 3)
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-space);
+  margin-bottom: calc(var(--sidebar-space) * 3);
 }
 
 .sidebar .options .option {
-    display:flex;
-    align-items: center;
-    gap: var(--sidebar-space);
+  display: flex;
+  align-items: center;
+  gap: var(--sidebar-space);
 }
 
 .sidebar .options .option img,
-.header .search img, 
+.header .search img,
 .header .login img,
-.main-content .your-projects .projects .project .icons img{
-    height: calc(var(--sidebar-space) * 1.5)
+.main-content .your-projects .projects .project .icons img {
+  height: calc(var(--sidebar-space) * 1.5);
 }
 
 .header {
-    display:grid;
-    background-color: white;
-    grid-area: header;
-    grid-template-areas:   
-        "search search login"
-        "info info options";
-    padding: calc(var(--sidebar-space) * 1.5);;
+  display: grid;
+  background-color: white;
+  grid-area: header;
+  grid-template-areas:
+    "search search login"
+    "info info options";
+  padding: calc(var(--sidebar-space) * 1.5);
 }
 
 .header .search {
-    display: flex;
-    align-items: center;
-    gap: var(--sidebar-space);
-    grid-area: search;
-    margin-left: var(--sidebar-space);
-    margin-right: var(--sidebar-space);
+  display: flex;
+  align-items: center;
+  gap: var(--sidebar-space);
+  grid-area: search;
+  margin-left: var(--sidebar-space);
+  margin-right: var(--sidebar-space);
 }
 
 .header .search input[type="text"] {
-    border-width: 0px;
-    background-color: var(--bg-color);
-    height: calc(var(--sidebar-space) * 1.5);
-    width: 100%;
-    border-radius: 20px;
+  border-width: 0px;
+  background-color: var(--bg-color);
+  height: calc(var(--sidebar-space) * 1.5);
+  width: 100%;
+  border-radius: 20px;
 }
 
 .header .login {
-    display:flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--sidebar-space);
-    grid-area: login;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sidebar-space);
+  grid-area: login;
 }
 
 .header .login .avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #feca10;
-    height: calc(var(--sidebar-space) * 3.5);
-    width: calc(var(--sidebar-space) * 3.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #feca10;
+  height: calc(var(--sidebar-space) * 3.5);
+  width: calc(var(--sidebar-space) * 3.5);
 }
 
-.header .login .avatar img{
-    height: calc(var(--sidebar-space) * 2);
+.header .login .avatar img {
+  height: calc(var(--sidebar-space) * 2);
 }
 
 .header .login .username {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .header .info {
-    display: grid;
-    grid-template-areas: 
-        "avatar greeting . . . ."
-        "avatar username username . . .";
-    grid-area: info;
+  display: grid;
+  grid-template-areas:
+    "avatar greeting . . . ."
+    "avatar username username . . .";
+  grid-area: info;
 }
 
 .header .info .avatar {
-    grid-area: avatar;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: avatar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header .info .avatar .background{
-    display: flex;
-    grid-area: avatar;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #feca10;
-    height: calc(var(--sidebar-space) * 4.5);
-    width: calc(var(--sidebar-space) * 4.5);
+.header .info .avatar .background {
+  display: flex;
+  grid-area: avatar;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #feca10;
+  height: calc(var(--sidebar-space) * 4.5);
+  width: calc(var(--sidebar-space) * 4.5);
 }
 
-.header .info .avatar .background img{
-    height: calc(var(--sidebar-space) * 3);
+.header .info .avatar .background img {
+  height: calc(var(--sidebar-space) * 3);
 }
 
 .header .info .greeting {
-    grid-area: greeting;
-    align-self: end;
+  grid-area: greeting;
+  align-self: end;
 }
 
 .header .info .greeting + div {
-    grid-area: username;
-    font-weight: bolder;
-    font-size: calc(var(--sidebar-space) * 1.5);
+  grid-area: username;
+  font-weight: bolder;
+  font-size: calc(var(--sidebar-space) * 1.5);
 }
 
 .header .options {
-    grid-area: options;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-around;
+  grid-area: options;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .header .options input[type="button"] {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
-    height: calc(var(--sidebar-space) * 3);
-    border-radius: 20px;
-    width: 100px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  height: calc(var(--sidebar-space) * 3);
+  border-radius: 20px;
+  width: 100px;
 }
 
 .main-content {
-    display: grid;
-    grid-template-areas: 
-        "projects projects projects projects announcements"
-        "projects projects projects projects trending";
-    grid-area: main-content;
-    padding: var(--sidebar-space);
-    padding-bottom: calc(var(--sidebar-space) * 4)
+  display: grid;
+  grid-template-areas:
+    "projects projects projects projects announcements"
+    "projects projects projects projects trending";
+  grid-area: main-content;
+  padding: var(--sidebar-space);
+  padding-bottom: calc(var(--sidebar-space) * 4);
 }
 
 @media (max-width: 800px) {
-
-    .main-content {
-        grid-template-areas: 
-            "projects"
-            "announcements"
-            "trending";
-    }
-    
+  .main-content {
+    grid-template-areas:
+      "projects"
+      "announcements"
+      "trending";
+  }
 }
 
 .main-content > .your-projects,
 .main-content > .announcements,
 .main-content > .trending {
-    padding-left: var(--sidebar-space);
-    padding-right: var(--sidebar-space);
+  padding-left: var(--sidebar-space);
+  padding-right: var(--sidebar-space);
 }
 
 .main-content > .your-projects {
-    grid-area: projects;
+  grid-area: projects;
 }
 
 .main-content > .your-projects .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .main-content > .your-projects .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 .main-content > .your-projects .projects .project {
-    display:grid;
-    border-radius: var(--sidebar-space);
-    background-color: white;
-    padding: calc(var(--sidebar-space) * 2);
-    box-shadow: inset 10px 0px hsl(42deg 87% 55%);
+  display: grid;
+  border-radius: var(--sidebar-space);
+  background-color: white;
+  padding: calc(var(--sidebar-space) * 2);
+  box-shadow: inset 10px 0px hsl(42deg 87% 55%);
 }
 
 .main-content > .your-projects > .projects > .project > h3 {
-    margin: 0px;
+  margin: 0px;
 }
 
 .main-content > .your-projects > .projects > .project > .text {
-
-    margin-bottom: var(--sidebar-space);
+  margin-bottom: var(--sidebar-space);
 }
 
 .main-content > .your-projects > .projects > .project > .icons {
-    display:flex;
-    justify-content: flex-end;
-    align-self: end;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-self: end;
+  gap: 20px;
 }
 
 .main-content > .your-projects > .projects > .project > .icons > img.share {
-    rotate: -90deg;
+  rotate: -90deg;
 }
 
 .main-content > .announcements {
-    grid-area: announcements;
+  grid-area: announcements;
 }
 
-.main-content > .announcements > .news, 
+.main-content > .announcements > .news,
 .main-content > .trending > .users {
-    
-    background-color: white;
-    border-radius: var(--sidebar-space);
-    padding: calc(var(--sidebar-space) * 2);
+  background-color: white;
+  border-radius: var(--sidebar-space);
+  padding: calc(var(--sidebar-space) * 2);
 }
 
 .main-content > .announcements > .news > .new > h3 {
-    font-size: calc(var(--sidebar-space) * 0.9);
-    margin: 0px;
-} 
+  font-size: calc(var(--sidebar-space) * 0.9);
+  margin: 0px;
+}
 
 .main-content > .announcements > .news > .new > .text {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    font-size: calc(var(--sidebar-space) * 0.8);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: calc(var(--sidebar-space) * 0.8);
 }
 
 .main-content > .announcements > .news > .new > hr {
-    background-color: lightgrey; 
-    height: 1px; 
-    border: 0;
-    margin: calc(var(--sidebar-space) * 1) 0px;
+  background-color: lightgrey;
+  height: 1px;
+  border: 0;
+  margin: calc(var(--sidebar-space) * 1) 0px;
 }
 
 .main-content > .trending {
-    grid-area: trending;
+  grid-area: trending;
 }
 
 .main-content > .trending > .users {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content > .trending > .users > .user {
-    display: grid;
-    grid-template-columns: fit-content(calc(var(--sidebar-space) * 4.5)) 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-area: trending;
-    grid-template-areas:
-        "avatar username"
-        "avatar app";
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: fit-content(calc(var(--sidebar-space) * 4.5)) 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-area: trending;
+  grid-template-areas:
+    "avatar username"
+    "avatar app";
+  margin-bottom: 20px;
 }
 
 .main-content > .trending > .users > .user > .avatar {
-    grid-area: avatar;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: var(--sidebar-space)
+  grid-area: avatar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--sidebar-space);
 }
 
 .main-content > .trending > .users > .user > .avatar > .background {
-    display: flex;
-    grid-area: avatar;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #feca10;
-    height: calc(var(--sidebar-space) * 3.5);
-    width: calc(var(--sidebar-space) * 3.5);
+  display: flex;
+  grid-area: avatar;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #feca10;
+  height: calc(var(--sidebar-space) * 3.5);
+  width: calc(var(--sidebar-space) * 3.5);
 }
 
-#bg-tr-1{
-    background-color: #e0f2fe;
+#bg-tr-1 {
+  background-color: #e0f2fe;
 }
 
-#bg-tr-3{
-    background-color: #a3a3a3;
+#bg-tr-3 {
+  background-color: #a3a3a3;
 }
 
-#bg-tr-4{
-    background-color: #fda4af;
+#bg-tr-4 {
+  background-color: #fda4af;
 }
 
-.main-content > .trending > .users > .user > .avatar > .background > img, 
+.main-content > .trending > .users > .user > .avatar > .background > img,
 .main-content > .trending > .users > .user > .avatar > .background > a > img {
-    height: calc(var(--sidebar-space) * 2);
+  height: calc(var(--sidebar-space) * 2);
 }
 
 .main-content > .trending > .users > .user > .username {
-    grid-area: username;
-    align-self: self-end;
+  grid-area: username;
+  align-self: self-end;
 }
 
 .main-content > .trending > .users > .user > .app {
-    grid-area: app;
-    color: grey;
+  grid-area: app;
+  color: grey;
 }
 
 #last-user-tr {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
