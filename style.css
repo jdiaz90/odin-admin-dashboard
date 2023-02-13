@@ -153,11 +153,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(var(--sidebar-space) * 4);
     border-radius: 50%;
     background-color: #feca10;
-    height: calc(var(--sidebar-space) * 3);
-    width: calc(var(--sidebar-space) * 3);
+    height: calc(var(--sidebar-space) * 3.5);
+    width: calc(var(--sidebar-space) * 3.5);
 }
 
 .header .login .avatar img{
@@ -169,8 +168,45 @@ body {
 }
 
 .header .info {
+    display: grid;
+    grid-template-areas: 
+        "avatar greeting . . . ."
+        "avatar username username . . .";
     border: 1px red solid;
     grid-area: info;
+}
+
+.header .info .avatar {
+    grid-area: avatar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .info .avatar .background{
+    display: flex;
+    grid-area: avatar;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #feca10;
+    height: calc(var(--sidebar-space) * 4.5);
+    width: calc(var(--sidebar-space) * 4.5);
+}
+
+.header .info .avatar .background img{
+    height: calc(var(--sidebar-space) * 3);
+}
+
+.header .info .greeting {
+    grid-area: greeting;
+    align-self: end;
+}
+
+.header .info .greeting + div {
+    grid-area: username;
+    font-weight: bolder;
+    font-size: calc(var(--sidebar-space) * 1.5);
 }
 
 .header .options {
