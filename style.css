@@ -99,7 +99,10 @@ body {
     gap: var(--sidebar-space);
 }
 
-.sidebar .options .option img {
+.sidebar .options .option img,
+.header .search img, 
+.header .login img,
+.main-content .your-projects .projects .project .icons img{
     height: calc(var(--sidebar-space) * 1.5)
 }
 
@@ -110,8 +113,7 @@ body {
     grid-template-areas:   
         "search search login"
         "info info options";
-    padding-left: calc(var(--sidebar-space) * 1.5);
-    padding-right: calc(var(--sidebar-space) * 1.5);
+    padding: calc(var(--sidebar-space) * 1.5);;
 }
 
 .header .search {
@@ -121,12 +123,6 @@ body {
     grid-area: search;
     margin-left: var(--sidebar-space);
     margin-right: var(--sidebar-space);
-}
-
-.header .search img, 
-.header .login img
-{
-    height: calc(var(--sidebar-space) * 1.5)
 }
 
 .header .search input[type="text"] {
@@ -222,6 +218,66 @@ body {
 }
 
 .main-content {
+    display: grid;
+    grid-template-areas: 
+        "projects projects announcements"
+        "projects projects trending";
+    grid-area: main-content;
+    padding: var(--sidebar-space);
+    padding-bottom: calc(var(--sidebar-space) * 4)
+}
+
+.main-content > .your-projects,
+.main-content > .announcements,
+.main-content > .trending {
+    padding-left: var(--sidebar-space);
+    padding-right: var(--sidebar-space);
+}
+
+.main-content > .your-projects {
+    grid-area: projects;
+}
+
+.main-content > .your-projects .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.main-content > .your-projects .projects .project {
+    display:grid;
+    border-radius: var(--sidebar-space);
+    background-color: white;
+    padding: var(--sidebar-space);
+    box-shadow: inset 10px 0px hsl(42deg 87% 55%);
+}
+
+.main-content > .your-projects > .projects > .project > h3{
+    margin: 0px;
+}
+
+.main-content > .your-projects > .projects > .project > .text{
+
+    margin-bottom: var(--sidebar-space);
+}
+
+.main-content > .your-projects > .projects > .project > .icons{
+    display:flex;
+    justify-content: flex-end;
+    align-self: end;
+    gap: 20px;
+}
+
+.main-content > .your-projects > .projects > .project > .icons > img.share{
+    rotate: -90deg;
+}
+
+.main-content > .announcements {
     border: 1px red solid;
-    grid-area: main-content
+    grid-area: announcements;
+}
+
+.main-content > .trending {
+    border: 1px red solid;
+    grid-area: trending;
 }
