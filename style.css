@@ -14,6 +14,7 @@
 :root{
     --sidebar-space: 1em;
     --primary-color: rgb(25 146 212);
+    --bg-color: rgb(226 232 240);
 }
 
 * {
@@ -23,6 +24,7 @@
 
 body {
     margin: 0px;
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -103,8 +105,77 @@ body {
 }
 
 .header {
+    display:grid;
     border: 1px red solid;
+    background-color: white;
     grid-area: header;
+    grid-template-areas:   
+        "search search login"
+        "info info options";
+    padding-left: calc(var(--sidebar-space) * 1.5);
+    padding-right: calc(var(--sidebar-space) * 1.5);
+}
+
+.header .search {
+    display: flex;
+    align-items: center;
+    border: 1px red solid;
+    gap: var(--sidebar-space);
+    grid-area: search;
+    margin-left: var(--sidebar-space);
+    margin-right: var(--sidebar-space);
+}
+
+.header .search img, 
+.header .login img
+{
+    height: calc(var(--sidebar-space) * 1.5)
+}
+
+.header .search input[type="text"] {
+    border-width: 0px;
+    background-color: var(--bg-color);
+    height: calc(var(--sidebar-space) * 1.5);
+    width: 100%;
+    border-radius: 20px;
+}
+
+.header .login {
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--sidebar-space);
+    border: 1px red solid;
+    grid-area: login;
+}
+
+.header .login .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--sidebar-space) * 4);
+    border-radius: 50%;
+    background-color: #feca10;
+    height: calc(var(--sidebar-space) * 3);
+    width: calc(var(--sidebar-space) * 3);
+}
+
+.header .login .avatar img{
+    height: calc(var(--sidebar-space) * 2);
+}
+
+.header .login .username {
+    font-weight: bold;
+}
+
+.header .info {
+    border: 1px red solid;
+    grid-area: info;
+}
+
+.header .options {
+    border: 1px red solid;
+    grid-area: options;
 }
 
 .main-content {
