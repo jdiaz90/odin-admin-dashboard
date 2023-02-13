@@ -227,6 +227,17 @@ body {
     padding-bottom: calc(var(--sidebar-space) * 4)
 }
 
+@media (max-width: 800px) {
+
+    .main-content {
+        grid-template-areas: 
+            "projects"
+            "announcements"
+            "trending";
+    }
+    
+}
+
 .main-content > .your-projects,
 .main-content > .announcements,
 .main-content > .trending {
@@ -252,23 +263,23 @@ body {
     box-shadow: inset 10px 0px hsl(42deg 87% 55%);
 }
 
-.main-content > .your-projects > .projects > .project > h3{
+.main-content > .your-projects > .projects > .project > h3 {
     margin: 0px;
 }
 
-.main-content > .your-projects > .projects > .project > .text{
+.main-content > .your-projects > .projects > .project > .text {
 
     margin-bottom: var(--sidebar-space);
 }
 
-.main-content > .your-projects > .projects > .project > .icons{
+.main-content > .your-projects > .projects > .project > .icons {
     display:flex;
     justify-content: flex-end;
     align-self: end;
     gap: 20px;
 }
 
-.main-content > .your-projects > .projects > .project > .icons > img.share{
+.main-content > .your-projects > .projects > .project > .icons > img.share {
     rotate: -90deg;
 }
 
