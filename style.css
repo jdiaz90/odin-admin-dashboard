@@ -220,8 +220,8 @@ body {
 .main-content {
     display: grid;
     grid-template-areas: 
-        "projects projects announcements"
-        "projects projects trending";
+        "projects projects projects projects announcements"
+        "projects projects projects projects trending";
     grid-area: main-content;
     padding: var(--sidebar-space);
     padding-bottom: calc(var(--sidebar-space) * 4)
@@ -248,7 +248,7 @@ body {
     display:grid;
     border-radius: var(--sidebar-space);
     background-color: white;
-    padding: var(--sidebar-space);
+    padding: calc(var(--sidebar-space) * 2);
     box-shadow: inset 10px 0px hsl(42deg 87% 55%);
 }
 
@@ -273,8 +273,35 @@ body {
 }
 
 .main-content > .announcements {
-    border: 1px red solid;
     grid-area: announcements;
+    border: 1px red solid;
+}
+
+.main-content > .announcements > .news {
+    
+    background-color: white;
+    border-radius: var(--sidebar-space);
+    padding: calc(var(--sidebar-space) * 2);
+}
+
+.main-content > .announcements > .news > .new > h3 {
+    font-size: calc(var(--sidebar-space) * 0.9);
+    margin: 0px;
+} 
+
+.main-content > .announcements > .news > .new > .text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: calc(var(--sidebar-space) * 0.8);
+}
+
+.main-content > .announcements > .news > .new > hr {
+    background-color: lightgrey; 
+    height: 1px; 
+    border: 0;
+    margin: calc(var(--sidebar-space) * 1) 0px;
 }
 
 .main-content > .trending {
