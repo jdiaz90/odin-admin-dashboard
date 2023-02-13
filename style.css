@@ -39,7 +39,6 @@ body {
 .sidebar {
     background-color: var(--primary-color);
     color: white;
-    border: 1px red solid;
     grid-area: sidebar;
     padding: var(--sidebar-space);
     font-weight: bold;
@@ -106,7 +105,6 @@ body {
 
 .header {
     display:grid;
-    border: 1px red solid;
     background-color: white;
     grid-area: header;
     grid-template-areas:   
@@ -119,7 +117,6 @@ body {
 .header .search {
     display: flex;
     align-items: center;
-    border: 1px red solid;
     gap: var(--sidebar-space);
     grid-area: search;
     margin-left: var(--sidebar-space);
@@ -145,7 +142,6 @@ body {
     align-items: center;
     justify-content: flex-end;
     gap: var(--sidebar-space);
-    border: 1px red solid;
     grid-area: login;
 }
 
@@ -172,7 +168,6 @@ body {
     grid-template-areas: 
         "avatar greeting . . . ."
         "avatar username username . . .";
-    border: 1px red solid;
     grid-area: info;
 }
 
@@ -210,8 +205,20 @@ body {
 }
 
 .header .options {
-    border: 1px red solid;
     grid-area: options;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header .options input[type="button"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    height: calc(var(--sidebar-space) * 3);
+    border-radius: 20px;
+    width: 100px;
 }
 
 .main-content {
