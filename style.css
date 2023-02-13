@@ -274,10 +274,10 @@ body {
 
 .main-content > .announcements {
     grid-area: announcements;
-    border: 1px red solid;
 }
 
-.main-content > .announcements > .news {
+.main-content > .announcements > .news, 
+.main-content > .trending > .users {
     
     background-color: white;
     border-radius: var(--sidebar-space);
@@ -305,6 +305,71 @@ body {
 }
 
 .main-content > .trending {
-    border: 1px red solid;
     grid-area: trending;
+}
+
+.main-content > .trending > .users {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content > .trending > .users > .user {
+    display: grid;
+    grid-template-columns: fit-content(calc(var(--sidebar-space) * 4.5)) 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-area: trending;
+    grid-template-areas:
+        "avatar username"
+        "avatar app";
+    margin-bottom: 20px;
+}
+
+.main-content > .trending > .users > .user > .avatar {
+    grid-area: avatar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--sidebar-space)
+}
+
+.main-content > .trending > .users > .user > .avatar > .background {
+    display: flex;
+    grid-area: avatar;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #feca10;
+    height: calc(var(--sidebar-space) * 3.5);
+    width: calc(var(--sidebar-space) * 3.5);
+}
+
+#bg-tr-1{
+    background-color: #e0f2fe;
+}
+
+#bg-tr-3{
+    background-color: #a3a3a3;
+}
+
+#bg-tr-4{
+    background-color: #fda4af;
+}
+
+.main-content > .trending > .users > .user > .avatar > .background > img, 
+.main-content > .trending > .users > .user > .avatar > .background > a > img {
+    height: calc(var(--sidebar-space) * 2);
+}
+
+.main-content > .trending > .users > .user > .username {
+    grid-area: username;
+    align-self: self-end;
+}
+
+.main-content > .trending > .users > .user > .app {
+    grid-area: app;
+    color: grey;
+}
+
+#last-user-tr {
+    margin-bottom: 0px;
 }
